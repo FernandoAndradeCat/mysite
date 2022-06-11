@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+
+.main-content{
+    margin-left: 11.4%;
+    width: 88%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 2px solid black;
+}
+
+html, body{
+    height: 100vh;
+    font-family: 'Ubuntu', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+body{
+    font-size: 1.6rem;
+}
+
+header{
+    background-color: cadetblue;
+}
+header img {
+    width: 64px;
+    margin-left: 2px;
+    padding: 13px 0;
+  }
+header .conteiner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 90%;
+    max-width: 980px;
+
+    margin: auto;
+}
+header nav ul {
+    display: flex;
+}
+header nav ul li {
+    list-style: none;
+}
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.4rem; 
+    padding: 2.4rem;
+    transition: all 250ms linear 0s;
+}
+header nav ul li a:hover {
+    background: rgba(255,255,255, 0.15)
+}
+
+/*Media queries*/
+@media (max-width:768px){
+    html{
+        font-size: 50%;
+    }
+}
+
+@media (max-width:428px) {
+    nav{
+        display: none;
+    }
+
+    .one,.two, .three{
+        background-color: azure;
+        height: 5px;
+        width: 100%;
+        margin: 6px auto;
+        transition-duration: .3s;
+    }
+
+    .menu-toggle{
+        width: 40px;
+        height: 30px;
+        margin-right: 20px;
+    }
+
+    .menu-section.on{
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100vw;
+        height: 100vh;
+        background-color: cadetblue;
+
+        z-index: 10;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu-section.on nav{
+        display: block;
+    }
+    .menu-section.on .menu-toggle{
+     position: absolute;
+     right: 30px;
+     top:15px;
+    }
+    
+    .menu-section.on .menu-toggle .one{
+        transform: rotate(45deg) translate(7px, 7px);
+    }
+    .menu-section.on .menu-toggle .two{
+        opacity: 0;
+    }
+    .menu-section.on .menu-toggle .three{
+        transform: rotate(-45deg) translate(8px, -10px);
+    }
+
+    .menu-section.on nav ul{
+        text-align: center;
+        display: inline;
+    }
+    .menu-section.on nav ul a{
+        transition-duration: 0.5s;
+        font-size: 3rem;;
+        line-height: 4rem;
+        display: block;
+    }
+}
